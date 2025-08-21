@@ -27,6 +27,8 @@ You can install the CleanTalk Python client via pip. Run the following command:
 ```bash
 pip install clean-talk-client
 ```
+- GitHub.com: [https://github.com/kolasai/clean-talk-python-client/](https://github.com/kolasai/clean-talk-python-client/)
+- Pypi.org: [https://pypi.org/project/clean-talk-client/](https://pypi.org/project/clean-talk-client/)
 
 ## Authentication
 
