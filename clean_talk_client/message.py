@@ -3,10 +3,10 @@ from clean_talk_client.exception.clean_talk_exception import CleanTalkException
 
 class Message:
     def __init__(self, message_id: str, text: str):
-        if not message_id:
-            raise CleanTalkException('Message ID cannot be empty.')
-        if not text:
-            raise CleanTalkException('Message text cannot be empty.')
+        if not message_id or not message_id.strip():
+            raise CleanTalkException('Message ID cannot be empty or whitespace.')
+        if not text or not text.strip():
+            raise CleanTalkException('Message text cannot be empty or whitespace.')
         self.message_id = message_id
         self.text = text
 

@@ -13,7 +13,14 @@ class KolasAiOAuthClient:
         self.session.headers.update({'Accept': 'application/json'})
 
     def auth(self, client_id: str, client_secret: str) -> AuthResult:
+        if not isinstance(client_id, str) or not client_id.strip():
+            raise CleanTalkException('client_id must be a non-empty string.')
+
+        if not isinstance(client_secret, str) or not client_secret.strip():
+            raise CleanTalkException('client_secret must be a non-empty string.')
+
         url = self.BASE_URL + self.AUTH_ENDPOINT
+
         data = {
             'grant_type': 'client_credentials',
             'client_id': client_id,
